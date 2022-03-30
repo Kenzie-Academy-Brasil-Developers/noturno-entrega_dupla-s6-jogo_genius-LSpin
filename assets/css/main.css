@@ -1,3 +1,43 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/*GLOBALS*/
 body {
-    background-color: pink;
+    background-color: #000;
+}
+
+h1,p {
+    color: #f1f2f3;
+}
+
+h1 {
+    font-size: 32px;
+}
+p{
+    font-size: 28px;
+}
+/*HERO*/
+
+.heroContainer {
+   display: flex; 
+   flex-direction: collumn;
+   justify-content: center;
+   width: 100%;
+   height: 12vw;
+}
+
+.heroContainer--title {
+    display: flex;
+    text-alooign: left;
+    justify-content: center;
+    align-self: left;
+    margin-top: 5%;
+}
+
+.heroContainer--paragraph {
+    display: flex;
+    text-align: left;
+    justify-content: center;
+    align-self: left;
 }
