@@ -9,18 +9,52 @@
     <link rel='stylesheet' type='text/css' media='screen' href='assets/css/main.css'>
 </head>
 <body>
+<header>
    <div class="herocontainer">
        <h1 class="heroContainer--title">Genious</h1>
        <p class="heroContainer--paragraph">Teste sua memória com este clássico jogo para todas as idades!</p>
-   </div> 
-    <div class="genius">
-        <div class="genius--pads">
-            <dv class="pads--leftUp"><p>teste</p></div>
-            <div class="pads--rightUp"></div>
-            <div class="pads--leftDown"></div>
-            <div class="pads--rightDown"></div>
+   </div>
+</header>
+<main>
+   <div class="geniusContainer"> 
+        <div class="genius">
+            <div class="genius--pads">
+                <button class="pads--leftUp"></button>
+                <button class="pads--rightUp"></button>
+                <button class="pads--leftDown"></button>
+                <button class="pads--rightDown"></button>
+            </div>
+        </div>
+        <div class="genius--settings">
+            <h2 class="settings--title">genius <span class="settings--logo"><img src="img/Logo_Estrela.webp" alt="logo dad marca de brinquedos estrela"></span></h2>
+            <div class="settings--interface">
+                <div class="interface--buttons">
+                    <div class="buttons--counter">
+                    --
+                    </div>
+                    <p class="counter--label">contador</p>
+                </div>
+            </div>
+            <div class="interface--buttons">
+                <button aria-label="acione para iniciar o jogo" class="buttons--start"></button>
+                <p class="--start--label">começar</p>
+            </div>
+            <div class="interface--buttons">
+                <button aria-label="acione para jogar o recorde atual" class="buttons--record"></button>
+                <p class="record--label">recorde</p>
+            </div>
+            <div class="interface--buttons interface--large">
+                <button class="buttons-on"></button>
+                <p class="label--on">liga</p>
+                <button class="buttons-off">
+                    <p class="label--off">desliga</p>
+                </button>
+            </div>
         </div>
     </div>
+</main>
+
+
     <script src="scripts/main.js"></script>
 </body>
 </html>
