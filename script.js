@@ -31,6 +31,7 @@ function criaJogo(){
 criaJogo();
 
 let arrCores = [];
+let contador = 0;
 const cont_botoes = [
     {
         id:"azul"
@@ -61,6 +62,7 @@ botao_onOff.addEventListener('click',liga());
 function iniciarJogo(){
     let num_cor = Math.floor(Math.random() * 4);
     arrCores.push(cont_botoes[num_cor]);
+    brilhaLente(arrCores);
 }
 
 const click_usuario = document.querySelectorAll('.genius__lentes');
@@ -70,6 +72,9 @@ for(let i = 0;i<click_usuario.length;i++){
     })
 }
 
-function brilhaLente(arrColor){
-    
+
+function brilhaLente(arrCores){
+    const escolheCor = document.getElementById(arrCores[contador].id)        
+    escolheCor.classList.add('genius__lentes--ligado');
+
 }
