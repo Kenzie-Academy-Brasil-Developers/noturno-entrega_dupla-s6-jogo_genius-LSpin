@@ -25,6 +25,41 @@ const const_sons = [
     "audio/amarelo.mp3"
 ];
 
+
+const genius = document.querySelector(".genius");
+function criaJogo(){
+    let lentes__container = document.createElement('div');
+    lentes__container.setAttribute('class','lentes__container');
+    lentes__container.innerHTML = `
+     <button class="genius__lentes genius__lentes--azul" ></button>
+        <button class="genius__lentes genius__lentes--vermelho" ></button>
+        <button class="genius__lentes genius__lentes--verde" ></button>
+        <button class="genius__lentes genius__lentes--amarelo" ></button>
+        <div class="genius__controles">
+            <div class="agrupar__elementos">
+                <div class="genius__contador ">--</div>
+                <p class="genius__conta_pontos">Pontos</p>
+            </div>
+            <div class="agrupar__elementos">
+                <button class="genius__botao on__off"></button>
+                <p>Onn/Off</p>
+            </div>
+            <div class="agrupar__elementos">
+                <button class="genius__botao iniciar"></button>
+                <p>Iniciar/Reiniciar</p>
+            </div>
+            <div class="agrupar__elementos">
+                <button class="genius__botao melhor__sequencia"></button>
+                <p>Melhor sequência</p>
+            </div>
+        </div>
+    `
+    genius.appendChild(lentes__container)
+}
+criaJogo();
+
+
+
 const_sons.forEach(url_som => {
     const audio = new Audio(url_som);
     const_database.sons.push(audio);
