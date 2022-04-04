@@ -42,7 +42,7 @@ function criaJogo(){
             </div>
             <div class="agrupar__elementos">
                 <button class="genius__botao on__off"></button>
-                <p>Onn/Off</p>
+                <p>Liga/Desliga</p>
             </div>
             <div class="agrupar__elementos">
                 <button class="genius__botao iniciar"></button>
@@ -65,7 +65,7 @@ const_sons.forEach(url_som => {
     const_database.sons.push(audio);
 });
 
-const_controles.onoff.addEventListener('click', liga)//sempre que clicar em ligar executa callback liga()
+const_controles.onoff.addEventListener('click', liga)
 function liga() {
     const_database.ligado = const_controles.contador.classList.toggle('genius__contador--on')
     console.log(const_database.ligado)
@@ -168,3 +168,5 @@ function esperaJogador(){
     const_database.timeout= setTimeout(contagem5s,0100)
 
 }
+
+
