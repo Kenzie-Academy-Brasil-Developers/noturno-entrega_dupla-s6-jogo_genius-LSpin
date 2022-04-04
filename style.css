@@ -14,7 +14,7 @@ html {
   font-size: 62.5%;
 }
 
-main {
+main, .lentes__container {
   width: 60rem;
   height: 60rem;
   position: relative;
