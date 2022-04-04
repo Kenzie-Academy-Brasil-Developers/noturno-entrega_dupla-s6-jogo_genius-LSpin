@@ -1,31 +1,3 @@
-const const_database = {
-    ligado: false,
-    timeout: undefined,
-    sons: [],
-    vez__jogador: false,
-    pontos: 0,
-    melhor__sequencia: [],
-    sequencia__computador: [],
-    sequencia__jogador: []
-};
-
-const const_controles = {
-    onoff: document.querySelector('.on__off'),
-    contador: document.querySelector(".genius__contador"),
-    controles: document.querySelector(".genius__controles"),
-    record: document.querySelector(".melhor__sequencia"),
-    iniciar: document.querySelector(".iniciar"),
-    lentes: document.querySelectorAll(".genius__lentes")
-}
-
-const const_sons = [
-    "audio/azul.mp3",
-    "audio/vermelho.mp3",
-    "audio/verde.mp3",
-    "audio/amarelo.mp3"
-];
-
-
 const genius = document.querySelector(".genius");
 function criaJogo(){
     let lentes__container = document.createElement('div');
@@ -58,14 +30,40 @@ function criaJogo(){
 }
 criaJogo();
 
+const const_database = {
+    ligado: false,
+    timeout: undefined,
+    sons: [],
+    vez__jogador: false,
+    pontos: 0,
+    melhor__sequencia: [],
+    sequencia__computador: [],
+    sequencia__jogador: []
+};
 
+const const_controles = {
+    onoff: document.querySelector('.on__off'),
+    contador: document.querySelector(".genius__contador"),
+    controles: document.querySelector(".genius__controles"),
+    record: document.querySelector(".melhor__sequencia"),
+    iniciar: document.querySelector(".iniciar"),
+    lentes: document.querySelectorAll(".genius__lentes")
+}
+console.log(const_controles);
+const const_sons = [
+    "audio/azul.mp3",
+    "audio/vermelho.mp3",
+    "audio/verde.mp3",
+    "audio/amarelo.mp3"
+];
 
 const_sons.forEach(url_som => {
     const audio = new Audio(url_som);
     const_database.sons.push(audio);
 });
 
-const_controles.onoff.addEventListener('click', liga)
+const onOff = document.querySelector(".on__off");
+onOff.addEventListener('click', liga)
 function liga() {
     const_database.ligado = const_controles.contador.classList.toggle('genius__contador--on')
     console.log(const_database.ligado)
@@ -75,14 +73,14 @@ function liga() {
     const_database.melhor__sequencia = []
     const_controles.contador.innerHTML = ('--')
     desliga_lentes()
-
 }
+
 function desliga_lentes() {
     const_controles.lentes.forEach(lentes => {
         lentes.classList.remove('genius__lentes--ligado')
     })
 }
-
+console.log(const_controles);
 const_controles.iniciar.addEventListener('click', iniciar)//sempre que clicar em ligar executa callback contagem3s() para o jogador se prepara para iniciar
 function iniciar() {
     const_controles.contador.innerHTML ='01'
