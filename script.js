@@ -51,12 +51,10 @@ const genius__contador = document.querySelector('.genius__contador')
 const iniciar = document.querySelector('.iniciar')
 function liga(){
     genius__contador.innerText = "0"; 
-    iniciar.addEventListener('click',iniciarJogo())
 }
 
 const botao_onOff = document.querySelector('.on__off');
 botao_onOff.addEventListener('click',liga());
-
 
 
 function iniciarJogo(){
@@ -64,6 +62,9 @@ function iniciarJogo(){
     arrCores.push(cont_botoes[num_cor]);
     brilhaLente(arrCores);
 }
+
+iniciar.addEventListener('click',iniciarJogo);
+
 
 const click_usuario = document.querySelectorAll('.genius__lentes');
 for(let i = 0;i<click_usuario.length;i++){
@@ -73,8 +74,11 @@ for(let i = 0;i<click_usuario.length;i++){
 }
 
 
-function brilhaLente(arrCores){
-    const escolheCor = document.getElementById(arrCores[contador].id)        
+function brilhaLente(arrBrilho){
+    const escolheCor = document.getElementById(arrBrilho[contador].id)        
     escolheCor.classList.add('genius__lentes--ligado');
-
+    function apagaLente(){
+        escolheCor.classList.remove('genius__lentes--ligado');
+    }
+    setTimeout(apagaLente, 2000);
 }
