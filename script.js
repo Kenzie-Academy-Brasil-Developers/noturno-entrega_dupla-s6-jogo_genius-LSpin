@@ -61,5 +61,15 @@ botao_onOff.addEventListener('click',liga());
 function iniciarJogo(){
     let num_cor = Math.floor(Math.random() * 4);
     arrCores.push(cont_botoes[num_cor]);
-    console.log(arrCores)
+}
+
+const click_usuario = document.querySelectorAll('.genius__lentes');
+for(let i = 0;i<click_usuario.length;i++){
+    click_usuario[i].addEventListener('click', (e)=>{
+        console.log(e.path[0].id);
+    })
+}
+
+function brilhaLente(arrColor){
+    
 }
