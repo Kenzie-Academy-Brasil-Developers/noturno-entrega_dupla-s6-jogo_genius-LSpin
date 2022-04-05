@@ -45,7 +45,21 @@ const iniciar = document.querySelector('.iniciar')
 
 function criaCores(){
     return Math.floor(Math.random() * 4);
-} 
+}
+
+const caminhoSons = [
+    "audio/azul.mp3",
+    "audio/vermmelho.mp3",
+    "audio/verde.mp3",
+    "audio/amarelo.mp3"
+]
+
+const armazenaSons = [];
+
+caminhoSons.forEach(e=>{
+    const buscaAudio = new Audio(e);
+    armazenaSons.push(buscaAudio);
+})
 
 function iniciarJogo(){
     reiniciarJogo();
@@ -76,7 +90,7 @@ for(let i = 0;i<click_usuario.length;i++){
         if(e.path[0].id !== arrCores[contador].id){
             alert("você errou!");     
             reiniciarJogo();
-        } else{
+        }else{
             if(contador === arrCores.length-1){
                 arrCores.push(cont_botoes[criaCores()])
                 let index = 0;
