@@ -75,9 +75,10 @@ for(let i = 0;i<click_usuario.length;i++){
                             brilhaLente(arrSequencia,index);
                             index++;
                         } 
-                    let continuarCores = setInterval(continuarSequencia,3000,arrCores)
+                    let continuarCores = setInterval(continuarSequencia,1500,arrCores)
                     index = 0;
-                    console.log(arrCores)
+                }else{
+                    contador++
                 }
             } 
     })
@@ -90,7 +91,7 @@ function brilhaLente(arrBrilho,num){
     function apagaLente(){
         escolheCor.classList.remove('genius__lentes--ligado');
     }
-    setTimeout(apagaLente, 2000);
+    setTimeout(apagaLente, 1000);
     return arrBrilho[num];
 }
 
