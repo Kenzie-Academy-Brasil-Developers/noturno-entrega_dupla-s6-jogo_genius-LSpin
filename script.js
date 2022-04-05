@@ -63,7 +63,10 @@ iniciar.addEventListener('click',iniciarJogo);
 const click_usuario = document.querySelectorAll('.genius__lentes');
 for(let i = 0;i<click_usuario.length;i++){
     click_usuario[i].addEventListener('click', (e)=>{
-            if(e.path[0].id === arrCores[contador].id){
+     if(e.path[0].id !== arrCores[contador].id){
+         alert("você errou!")       
+        
+    }else if(e.path[0].id === arrCores[contador].id){
                 if(contador === arrCores.length-1){
                     let novaCor = Math.floor(Math.random() * 4);
                     arrCores.push(cont_botoes[novaCor])
