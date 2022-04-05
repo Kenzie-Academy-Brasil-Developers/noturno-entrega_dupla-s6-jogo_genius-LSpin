@@ -41,7 +41,6 @@ const cont_botoes = [
     }
 ]
 
-const genius__contador = document.querySelector('.genius__contador')
 const iniciar = document.querySelector('.iniciar')
 
 function criaCores(){
@@ -49,10 +48,14 @@ function criaCores(){
 } 
 
 function iniciarJogo(){
-    arrCores=[];
+    reiniciarJogo();
     arrCores.push(brilhaLente(cont_botoes,criaCores()));
+}
+
+function reiniciarJogo(){
+    arrCores = [];
     contador = 0;
-    genius__contador.innerText="0"
+    contadorNaTela.innerText=arrCores.length;
 }
 
 function brilhaLente(arrBrilho,num){
@@ -65,12 +68,6 @@ function brilhaLente(arrBrilho,num){
     return arrBrilho[num];
 }
 
-function reiniciarJogo(){
-    arrCores = [];
-    contador = 0;
-}
-
-// "Operador do Sistema"
 iniciar.addEventListener('click',iniciarJogo);
 const click_usuario = document.querySelectorAll('.genius__lentes');
 
@@ -79,9 +76,7 @@ for(let i = 0;i<click_usuario.length;i++){
         if(e.path[0].id !== arrCores[contador].id){
             alert("você errou!");     
             reiniciarJogo();
-            contadorNaTela.innerText=arrCores.length;
-        }
-        else{
+        } else{
             if(contador === arrCores.length-1){
                 arrCores.push(cont_botoes[criaCores()])
                 let index = 0;
