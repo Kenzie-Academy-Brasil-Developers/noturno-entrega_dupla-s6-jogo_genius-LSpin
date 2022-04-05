@@ -13,10 +13,6 @@ function criaJogo(){
                 <p class="genius__conta_pontos">Pontos</p>
             </div>
             <div class="agrupar__elementos">
-                <button class="genius__botao on__off"></button>
-                <p>Liga/Desliga</p>
-            </div>
-            <div class="agrupar__elementos">
                 <button class="genius__botao iniciar"></button>
                 <p>Iniciar/Reiniciar</p>
             </div>
@@ -28,6 +24,7 @@ criaJogo();
 
 let arrCores = [];
 let contador = 0;
+const contadorNaTela = document.querySelector('.genius__contador');
 const cont_botoes = [
     {
         id:"azul"
@@ -45,16 +42,14 @@ const cont_botoes = [
 
 const genius__contador = document.querySelector('.genius__contador')
 const iniciar = document.querySelector('.iniciar')
-function liga(){
-    genius__contador.innerText = "0"; 
-}
 
-const botao_onOff = document.querySelector('.on__off');
-botao_onOff.addEventListener('click',liga);
 
 function iniciarJogo(){
+    arrCores=[];
     let novaCor = Math.floor(Math.random() * 4)
     arrCores.push(brilhaLente(cont_botoes,novaCor));
+    contador = 0;
+    genius__contador.innerText="0"
 }
 
 iniciar.addEventListener('click',iniciarJogo);
@@ -63,9 +58,12 @@ iniciar.addEventListener('click',iniciarJogo);
 const click_usuario = document.querySelectorAll('.genius__lentes');
 for(let i = 0;i<click_usuario.length;i++){
     click_usuario[i].addEventListener('click', (e)=>{
+        console.log(arrCores)
+        console.log(contador)
      if(e.path[0].id !== arrCores[contador].id){
-         alert("você errou!");       
+        alert("você errou!");     
         reiniciarJogo();
+        contadorNaTela.innerText=arrCores.length;
     }
     else if(e.path[0].id === arrCores[contador].id){
                 if(contador === arrCores.length-1){
@@ -81,8 +79,12 @@ for(let i = 0;i<click_usuario.length;i++){
                         } 
                     let continuarCores = setInterval(continuarSequencia,1500,arrCores)
                     index = 0;
+                    contador = 0;
+                    console.log(arrCores)
+                    console.log(contador)
                 }else{
                     contador++
+                    contadorNaTela.innerText=arrCores.length-1;
                 }
             } 
     })
@@ -103,3 +105,4 @@ function reiniciarJogo(){
     arrCores = [];
     contador = 0;
 }
+
