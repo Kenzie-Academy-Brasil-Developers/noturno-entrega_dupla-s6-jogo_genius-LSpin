@@ -50,7 +50,7 @@ function liga(){
 }
 
 const botao_onOff = document.querySelector('.on__off');
-botao_onOff.addEventListener('click',liga());
+botao_onOff.addEventListener('click',liga);
 
 function iniciarJogo(){
     let novaCor = Math.floor(Math.random() * 4)
@@ -64,9 +64,10 @@ const click_usuario = document.querySelectorAll('.genius__lentes');
 for(let i = 0;i<click_usuario.length;i++){
     click_usuario[i].addEventListener('click', (e)=>{
      if(e.path[0].id !== arrCores[contador].id){
-         alert("você errou!")       
-        
-    }else if(e.path[0].id === arrCores[contador].id){
+         alert("você errou!");       
+        reiniciarJogo();
+    }
+    else if(e.path[0].id === arrCores[contador].id){
                 if(contador === arrCores.length-1){
                     let novaCor = Math.floor(Math.random() * 4);
                     arrCores.push(cont_botoes[novaCor])
@@ -98,3 +99,7 @@ function brilhaLente(arrBrilho,num){
     return arrBrilho[num];
 }
 
+function reiniciarJogo(){
+    arrCores = [];
+    contador = 0;
+}
